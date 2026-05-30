@@ -2,8 +2,8 @@
 # Docs: https://docs.netlify.com/configure-builds/file-based-configuration/
 
 [build]
-  # No build step — this is a pure static site.
-  publish = "."
+  command = "npm run build"
+  publish = "dist"
 
 # Security + caching headers
 [[headers]]

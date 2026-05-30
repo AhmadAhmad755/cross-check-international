@@ -10,49 +10,77 @@ institutional partners.
 
 ## Stack
 
-Single-file static site. No build step, no JS framework — just hand-crafted HTML
-+ CSS using DM Serif Display / DM Sans / DM Mono from Google Fonts.
+- **React 19** + **Vite 6** + **TypeScript**
+- **MUI (Material UI) 6** — breakpoints + mobile nav drawer only; all visual styling stays in CSS
+- **DM Serif Display / DM Sans / DM Mono** (Google Fonts)
+- Brand styling preserved in `src/styles/site.css` (CSS variables + existing classes)
+- `index.static.html` — previous single-file version (reference only)
+- `CCI_Landing_Page_v2.html` — original design source (reference)
 
-- `index.html` — the entire page (served at the domain root)
-- `netlify.toml` — Netlify deploy config + security headers
-- `CCI_Landing_Page_v2.html` — original design source (kept for reference)
+## Local development
 
-## Local preview
-
-Any static server works. Easiest options:
+Requires **Node.js 18+** and npm.
 
 ```bash
-# Python (already on macOS)
-python3 -m http.server 8000
-
-# Or Node
-npx serve .
+cd /Users/ahmadmansur/Desktop/CCI
+npm install
+npm run dev
 ```
 
-Then open <http://localhost:8000>.
+Open the URL Vite prints (usually <http://localhost:5173>).
+
+### Production build preview
+
+```bash
+npm run build
+npm run preview
+```
+
+### Static-only fallback (no build)
+
+The archived single-file page can still be served for comparison:
+
+```bash
+python3 -m http.server 8000
+# open http://localhost:8000/index.static.html
+```
+
+## Responsive testing
+
+Check these widths in DevTools:
+
+| Viewport | Target |
+|----------|--------|
+| 375px | Mobile |
+| 768px | Tablet |
+| 1024px | Laptop |
+| 1440px+ | Desktop |
 
 ## Deployment
 
-Hosted on **[Netlify](https://www.netlify.com/)** with CI/CD from GitHub —
-every push to `main` ships to production automatically.
-
-- Production: <https://YOUR-DOMAIN-HERE>
-- Preview deploys are generated for every branch / pull request.
-
-### Updating the live site
+Hosted on **[Netlify](https://www.netlify.com/)** with CI/CD from GitHub.
 
 ```bash
-# make edits to index.html
-git add index.html
+git add .
 git commit -m "describe the change"
 git push
-# Netlify auto-deploys within ~30 seconds
 ```
 
-## Domain
+Netlify runs `npm run build` and publishes the `dist/` folder (see `netlify.toml`).
 
-Custom domain managed at **GoDaddy**, with DNS pointed at Netlify's load balancer
-(see `docs/` or Netlify dashboard for the exact A / CNAME records).
+## Project layout
+
+```
+src/
+  main.tsx          # ThemeProvider + app entry
+  theme.ts          # Breakpoints + CssBaseline (matches CCI tokens)
+  App.tsx           # Top bar + main shell
+  components/
+    SiteNav.tsx     # Sticky nav + mobile drawer (only MUI UI chrome)
+    LandingPage.tsx # Original markup + class names (unchanged structure)
+  styles/
+    site.css        # Original CSS + responsive breakpoints
+```
 
 ## License
 
