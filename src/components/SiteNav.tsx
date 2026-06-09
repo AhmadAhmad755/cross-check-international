@@ -16,33 +16,6 @@ const NAV_LINKS = [
   { label: 'About', href: '#' },
 ];
 
-function LogoMark() {
-  return (
-    <svg className="logomark" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-      <rect width="38" height="38" rx="10" fill="#08152B" />
-      <circle cx="19" cy="19" r="11.5" stroke="#1A6BD4" strokeWidth="1.2" fill="none" />
-      <ellipse cx="19" cy="19" rx="5.5" ry="11.5" stroke="#1A6BD4" strokeWidth="0.9" fill="none" />
-      <line x1="7.5" y1="19" x2="30.5" y2="19" stroke="#1A6BD4" strokeWidth="0.9" />
-      <line x1="9" y1="14" x2="29" y2="14" stroke="#1A6BD4" strokeWidth="0.9" />
-      <line x1="9" y1="24" x2="29" y2="24" stroke="#1A6BD4" strokeWidth="0.9" />
-      <path
-        d="M19 8L25.5 11.5V19.5C25.5 23 22.5 26 19 27.5C15.5 26 12.5 23 12.5 19.5V11.5Z"
-        fill="rgba(26,107,212,0.14)"
-        stroke="#3B8EF0"
-        strokeWidth="1.1"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M16 19.5L18.2 21.5L22 17"
-        stroke="white"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 export default function SiteNav() {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
@@ -51,11 +24,7 @@ export default function SiteNav() {
   return (
     <nav className="site-nav">
       <a href="#" className="nav-logo">
-        <LogoMark />
-        <div className="logo-wordmark">
-          <span className="lw-cci">CCI</span>
-          <span className="lw-full">CrossCheck International</span>
-        </div>
+        <img src="/cci-logo.svg" alt="CrossCheck International" className="cci-logo" />
       </a>
 
       {isDesktop && (
