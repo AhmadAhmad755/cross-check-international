@@ -9,6 +9,6 @@
     <path d="M 80 33 L 80 130" fill="none" stroke="#08152B" stroke-width="1.4" opacity="0.55" stroke-linecap="round"/>
     <path d="M 70 81 L 77 88 L 92 73" fill="none" stroke="#1A6BD4" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
   </g>
-  <text x="108" y="58" font-family="'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="600" font-size="32" fill="#08152B" letter-spacing="3.5">CCI</text>
-  <text x="108" y="80" font-family="'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-weight="400" font-size="11" fill="#4A5568" letter-spacing="2.8">CROSSCHECK INTERNATIONAL</text>
+  <text x="108" y="60" font-family="'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="600" font-size="36" fill="#08152B" letter-spacing="3.5">CCI</text>
+  <text x="108" y="82" font-family="'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-weight="400" font-size="12.5" fill="#4A5568" letter-spacing="2.8">CROSSCHECK INTERNATIONAL</text>
 </svg>

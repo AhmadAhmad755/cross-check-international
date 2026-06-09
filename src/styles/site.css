@@ -79,14 +79,14 @@ nav.site-nav {
 }
 
 .cci-logo {
-  height: 36px;
+  height: 40px;
   width: auto;
   flex-shrink: 0;
   display: block;
 }
 
 .cci-logo--footer {
-  height: 28px;
+  height: 32px;
   filter: brightness(0) invert(1);
   opacity: 0.92;
 }
