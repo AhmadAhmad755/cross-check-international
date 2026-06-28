@@ -23,6 +23,7 @@
 }
 
 html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 80px; }   /* navbar height + a touch of breathing room */
 body {
   font-family: 'DM Sans', sans-serif;
   background: var(--bg);
@@ -106,6 +107,20 @@ nav.site-nav {
   transition: color 0.15s;
 }
 .nav-center a:hover { color: var(--navy); }
+.nav-center a {
+  position: relative;
+  padding-bottom: 3px;
+}
+.nav-center a.active { color: var(--navy); }
+.nav-center a.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--blue-mid);
+}
 
 .nav-right {
   display: flex;
@@ -457,6 +472,138 @@ nav.site-nav {
   color: var(--slate);
   line-height: 1.72;
   font-weight: 300;
+}
+
+/* ─── Intelligence Categories ──────────────────────────────── */
+.ic-head {
+  max-width: 720px;
+  margin-bottom: 48px;
+}
+.ic-head .sec-p {
+  margin-top: 16px;
+  max-width: 640px;
+}
+
+.ic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-mid);
+  border: 1px solid var(--border-mid);
+  border-bottom: none;
+  border-radius: 14px 14px 0 0;
+  overflow: hidden;
+}
+.ic-card {
+  background: var(--bg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.2s;
+}
+.ic-card:hover { background: var(--bg-soft); }
+
+.ic-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+.ic-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--slate-light);
+  letter-spacing: 1.5px;
+}
+.ic-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  background: var(--blue-pale);
+  border: 1px solid var(--border-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.ic-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--blue-mid);
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ic-card:hover .ic-icon { background: var(--blue-rule); }
+
+.ic-card h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+.ic-card p {
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.ic-returns {
+  margin-top: auto;
+  padding-top: 22px;
+}
+.ic-returns-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--slate-light);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.ic-returns-list {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--slate-light);
+  line-height: 1.6;
+}
+
+.ic-callout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border-mid);
+  border-radius: 0 0 14px 14px;
+}
+.ic-callout svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--slate-light);
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+.ic-callout span {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  color: var(--slate-light);
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+
+@media (max-width: 1023px) {
+  .ic-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 639px) {
+  .ic-grid { grid-template-columns: 1fr; }
 }
 
 /* ── INTELLIGENCE SPLIT ──────────────────────────── */
@@ -1082,4 +1229,142 @@ video {
     grid-template-columns: 1.5fr 1fr 1fr;
     gap: 40px;
   }
+}
+
+/* ── BUTTON RESETS (CTAs rendered as <button>) ───────── */
+button.btn-primary,
+button.btn-secondary,
+button.btn-cta-dark,
+button.btn-cta-outline {
+  font-family: inherit;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+button.btn-primary,
+button.btn-cta-dark { border: none; }
+
+/* ── FOOTER LINKS RENDERED AS <button> ───────────────── */
+.footer-col ul button {
+  font-family: inherit;
+  font-size: 13.5px;
+  color: #506070;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-weight: 300;
+  text-align: left;
+  transition: color 0.15s;
+}
+.footer-col ul button:hover { color: #8896A8; }
+
+/* ── "COMING SOON" PLACEHOLDER LINKS ─────────────────── */
+.link-soon { cursor: not-allowed; }
+
+/* ── BODY SCROLL LOCK (modal open) ───────────────────── */
+body.overflow-hidden { overflow: hidden; }
+
+/* ── BRIEFING MODAL ──────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(8, 21, 43, 0.55);
+}
+.modal-panel {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  background: var(--bg);
+  border: 1px solid var(--border-mid);
+  border-radius: 12px;
+  padding: 40px;
+}
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--slate);
+  cursor: pointer;
+  line-height: 0;
+  font-family: inherit;
+  transition: background 0.15s, color 0.15s;
+}
+.modal-close:hover { background: var(--bg-soft); color: var(--navy); }
+.modal-close svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.modal-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate-light);
+  margin-bottom: 14px;
+}
+.modal-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+.modal-title em { font-style: italic; color: var(--blue-mid); }
+.modal-body {
+  font-size: 14.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--slate);
+  margin-bottom: 22px;
+}
+.modal-email-box {
+  margin-bottom: 24px;
+  padding: 16px;
+  border: 1px solid var(--border-mid);
+  border-radius: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 13.5px;
+  color: var(--navy);
+  user-select: all;
+  word-break: break-all;
+}
+.modal-actions {
+  display: flex;
+  gap: 12px;
+}
+.modal-actions .btn-primary,
+.modal-actions .btn-secondary {
+  flex: 1;
+  justify-content: center;
+}
+.btn-secondary.copied {
+  background: var(--teal-pale);
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+@media (max-width: 599px) {
+  .modal-panel { padding: 28px 24px; }
+  .modal-actions { flex-direction: column; }
 }

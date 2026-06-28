@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
@@ -8,22 +8,56 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 
-const NAV_LINKS = [
-  { label: 'Solutions', href: '#' },
-  { label: 'For Governments', href: '#' },
-  { label: 'Partners', href: '#' },
-  { label: 'API', href: '#' },
-  { label: 'About', href: '#' },
+type NavLink = { label: string; href: string; target: string };
+
+const NAV_LINKS: NavLink[] = [
+  { label: 'Solutions', href: '#solutions', target: 'solutions' },
+  { label: 'For Governments', href: '#who-we-serve', target: 'who-we-serve' },
+  { label: 'Partners', href: '#who-we-serve', target: 'who-we-serve' },
+  { label: 'API', href: '#intelligence-layer', target: 'intelligence-layer' },
+  { label: 'About', href: '#why-cci', target: 'why-cci' },
 ];
 
-export default function SiteNav() {
+// All section ids the observer should watch (drives active-link highlighting).
+const OBSERVED_IDS = [
+  'top',
+  'solutions',
+  'intelligence-layer',
+  'how-it-works',
+  'for-institutions',
+  'global',
+  'who-we-serve',
+  'why-cci',
+  'get-started',
+];
+
+export default function Navbar() {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [activeId, setActiveId] = useState<string>('top');
+
+  useEffect(() => {
+    const sections = OBSERVED_IDS.map((id) => document.getElementById(id)).filter(
+      (el): el is HTMLElement => el !== null,
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveId(entry.target.id);
+        });
+      },
+      { rootMargin: '-40% 0px -55% 0px', threshold: 0 },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <nav className="site-nav">
-      <a href="#" className="nav-logo">
+      <a href="#top" className="nav-logo">
         <img src="/cci-logo.svg" alt="CrossCheck International" className="cci-logo" />
       </a>
 
@@ -31,7 +65,13 @@ export default function SiteNav() {
         <ul className="nav-center">
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
-              <a href={link.href}>{link.label}</a>
+              <a
+                href={link.href}
+                className={activeId === link.target ? 'active' : undefined}
+                aria-current={activeId === link.target ? 'true' : undefined}
+              >
+                {link.label}
+              </a>
             </li>
           ))}
         </ul>
@@ -48,7 +88,7 @@ export default function SiteNav() {
             <MenuIcon fontSize="small" />
           </IconButton>
         )}
-        <a href="#" className="btn-nav-ghost">
+        <a href="/login" className="btn-nav-ghost">
           Sign in
         </a>
       </div>
