@@ -47,15 +47,6 @@ export default function Footer() {
             <li><button type="button" onClick={open}>Contact</button></li>
           </ul>
         </div>
-        <div className="footer-col">
-          <h4>Legal</h4>
-          <ul>
-            <li><ComingSoonLink label="Privacy Policy" /></li>
-            <li><ComingSoonLink label="Terms of Use" /></li>
-            <li><ComingSoonLink label="Data Governance" /></li>
-            <li><ComingSoonLink label="Cookie Policy" /></li>
-          </ul>
-        </div>
       </div>
       <div className="footer-bottom">
         <span>© 2026 CrossCheck International. All rights reserved.</span>

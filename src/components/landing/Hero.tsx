@@ -25,18 +25,18 @@ export default function Hero() {
           <div className="hero-actions">
             <button type="button" className="btn-primary" onClick={open}>
               Request a Briefing
-              <span className="arr"><svg viewBox="0 0 13 13"><path d="M2 6.5h9M7 2l4.5 4.5L7 11" /></svg></span>
+              <span className="arr" aria-hidden="true"><svg viewBox="0 0 13 13"><path d="M2 6.5h9M7 2l4.5 4.5L7 11" /></svg></span>
             </button>
             <a href="#how-it-works" className="btn-secondary">
               View the Platform
-              <span className="arr"><svg viewBox="0 0 13 13"><path d="M2 6.5h9M7 2l4.5 4.5L7 11" /></svg></span>
+              <span className="arr" aria-hidden="true"><svg viewBox="0 0 13 13"><path d="M2 6.5h9M7 2l4.5 4.5L7 11" /></svg></span>
             </a>
           </div>
           <DesignedForTags />
         </div>
 
         <div className="hero-right">
-          <div className="hero-card">
+          <div className="hero-card reveal">
             <div className="hc-top">
               <span className="hc-label">Live Intelligence Request</span>
               <span className="hc-badge badge-active">● LIVE</span>
@@ -50,7 +50,7 @@ export default function Hero() {
               <div className="hc-row"><span className="hc-row-k">Response Time</span><span className="hc-row-v">2.3s</span></div>
             </div>
           </div>
-          <div className="hero-card-duo">
+          <div className="hero-card-duo reveal reveal--s1">
             <div className="hero-card">
               <div className="hc-top"><span className="hc-label">Risk Signal</span></div>
               <div className="hc-title" style={{ fontSize: '13px', marginBottom: '6px' }}>Financial Check</div>

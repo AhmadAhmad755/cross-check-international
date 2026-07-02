@@ -135,7 +135,7 @@ export default function BriefingModal() {
         <div className="modal-actions">
           <a href={MAILTO} className="btn-primary">
             Open in mail app
-            <span className="arr">
+            <span className="arr" aria-hidden="true">
               <svg viewBox="0 0 13 13">
                 <path d="M2 6.5h9M7 2l4.5 4.5L7 11" />
               </svg>

@@ -88,9 +88,6 @@ export default function Navbar() {
             <MenuIcon fontSize="small" />
           </IconButton>
         )}
-        <a href="/login" className="btn-nav-ghost">
-          Sign in
-        </a>
       </div>
 
       <Drawer

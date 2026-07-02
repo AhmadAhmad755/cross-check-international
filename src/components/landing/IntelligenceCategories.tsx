@@ -121,14 +121,14 @@ export default function IntelligenceCategories() {
   return (
     <section id="intelligence-layer" className="section">
       <div className="section-inner">
-        <div className="ic-head">
+        <div className="ic-head reveal">
           <div className="eyebrow-sm"><div className="el"></div><span className="et">The Intelligence Layer</span></div>
           <h2 className="sec-h2">Seven categories of intelligence. <em>One sovereign layer.</em></h2>
           <p className="sec-p">CCI returns structured classifications and confirmations across seven intelligence domains. Every signal is governed by bilateral agreement, scoped per access tier, and returned without transferring underlying records.</p>
         </div>
         <div className="ic-grid">
-          {CATEGORIES.map((c) => (
-            <div className="ic-card" key={c.num}>
+          {CATEGORIES.map((c, i) => (
+            <div className={`ic-card reveal${i > 0 ? ` reveal--s${Math.min(i, 7)}` : ''}`} key={c.num}>
               <div className="ic-card-top">
                 <div className="ic-num">{c.num}</div>
                 <div className="ic-icon" aria-hidden="true">{c.icon}</div>

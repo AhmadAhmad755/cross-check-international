@@ -3,18 +3,18 @@ export default function IntelligenceLayerSplit() {
     <section id="how-it-works" className="section section-alt">
       <div className="section-inner">
         <div className="split">
-          <div className="split-text">
+          <div className="split-text reveal">
             <div className="eyebrow-sm"><div className="el"></div><span className="et">01 · Intelligence Layer</span></div>
             <h2 className="sec-h2">The gap between processing and intelligence — <em>filled.</em></h2>
-            <p className="sec-p">VFS Global and TLS Contact process applications. Interpol and Europol share alerts. CCI operates in the space between — providing the structured risk intelligence that neither currently offers at scale.</p>
+            <p className="sec-p">Application processing agencies handle intake — biometric enrolment, document verification, and administrative processing of visa, residency, and citizenship applications. International law enforcement channels handle the high-severity end — active red notices, extradition requests, and serious transnational crime. Between them sits the operational middle layer: overstay history, cross-border defaults, prior refusals, revoked professional licences, open investigations and active proceedings in participating jurisdictions, and pattern signals only visible across borders. Neither layer surfaces this today. CCI is the structured intelligence layer that does.</p>
             <ul className="feature-list">
-              <li><div className="fl-dot"></div>Cross-border risk classification shared securely between requesting and responding nations</li>
-              <li><div className="fl-dot"></div>Intelligence usable by banks, insurers, and ETA-equivalent border systems</li>
-              <li><div className="fl-dot"></div>Designed to integrate alongside existing visa and travel processing workflows</li>
-              <li><div className="fl-dot"></div>No replacement of existing infrastructure — a complementary intelligence layer</li>
+              <li><div className="fl-dot"></div>Application processors move applications forward. CCI adds the cross-border risk classification they cannot see.</li>
+              <li><div className="fl-dot"></div>International law enforcement covers the severe end. CCI covers the operational middle — the signals that inform routine border, banking, and regulatory decisions.</li>
+              <li><div className="fl-dot"></div>No replacement of existing infrastructure. CCI is a complementary intelligence layer that runs alongside the systems agencies already use.</li>
+              <li><div className="fl-dot"></div>Every signal is agreement-gated, classification-only, and delivered without transferring underlying records.</li>
             </ul>
           </div>
-          <div className="split-panel">
+          <div className="split-panel reveal reveal--s1">
             <div className="sp-header">
               <span className="sp-header-title">Cross-Border Intelligence Request</span>
               <span className="hc-badge badge-blue" style={{ fontSize: '11px' }}>ACTIVE</span>

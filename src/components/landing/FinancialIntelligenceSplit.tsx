@@ -3,7 +3,7 @@ export default function FinancialIntelligenceSplit() {
     <section id="for-institutions" className="section">
       <div className="section-inner">
         <div className="split flip">
-          <div className="split-text">
+          <div className="split-text reveal">
             <div className="eyebrow-sm"><div className="el"></div><span className="et">02 · Financial Intelligence</span></div>
             <h2 className="sec-h2">Risk signals banks and insurers can <em>act on.</em></h2>
             <p className="sec-p">CCI delivers structured risk signals that financial institutions can integrate into onboarding, lending, and cross-border transaction workflows — through a secure API governed by country-level data agreements.</p>
@@ -14,7 +14,7 @@ export default function FinancialIntelligenceSplit() {
               <li><div className="fl-dot"></div>No raw personal data transmitted — classification and match signals only</li>
             </ul>
           </div>
-          <div className="split-panel">
+          <div className="split-panel reveal reveal--s1">
             <div className="sp-header">
               <span className="sp-header-title">Financial Risk Signal</span>
               <span className="hc-badge badge-amber" style={{ fontSize: '11px' }}>REVIEW</span>
