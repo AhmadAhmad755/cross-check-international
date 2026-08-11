@@ -8,7 +8,7 @@ export default function PublicLoanRecovery() {
             <h2 className="sec-h2">Public loans, tracked <em>across borders.</em></h2>
             <p className="sec-p">Governments and banks underwrite loan schemes on the assumption that borrowers remain reachable. When borrowers relocate internationally, obligations often become invisible, and public and bank lending schemes lose billions annually across the UK, EU, and internationally. CCI enables participating governments to re-establish contact with obligation-holders through the formal channel of the receiving country — under bilateral agreement, with proportionality safeguards.</p>
             <ul className="feature-list">
-              <li><div className="fl-dot"></div>Cross-border tracking of loans under bilateral agreement, with re-contact via the receiving country's authorised channel — not private collection</li>
+              <li><div className="fl-dot"></div>Cross-border tracking of loans under bilateral agreement, with re-contact via the receiving country's authorised channel</li>
               <li><div className="fl-dot"></div>Loan schemes defined by each participating country under its own legal framework</li>
               <li><div className="fl-dot"></div>Recovery pathways activate only where a bilateral obligation-recovery framework is in place between the origin and receiving nations</li>
             </ul>
