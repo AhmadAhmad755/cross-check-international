@@ -4,7 +4,7 @@ export default function HumanitarianSplit() {
       <div className="section-inner">
         <div className="split">
           <div className="split-text reveal">
-            <div className="eyebrow-sm"><div className="el"></div><span className="et">03 · Humanitarian Intelligence</span></div>
+            <div className="eyebrow-sm"><div className="el"></div><span className="et">04 · Humanitarian Intelligence</span></div>
             <h2 className="sec-h2">Cross-border identity <em>in service of protection.</em></h2>
             <p className="sec-p">The same infrastructure that surfaces risk also enables protection. CCI supports humanitarian bodies, protection agencies, and consular services in identifying separated families, confirming the identity of persons in need of protection, and preventing duplicate registrations in crisis response — all without exposing underlying case data across borders.</p>
             <ul className="feature-list">

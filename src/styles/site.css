@@ -374,6 +374,7 @@ nav.site-nav {
 /* Section transitions: hairline rule between adjacent sections that share the
    same background (so they stay distinct without relying on a colour change). */
 #intelligence-layer,
+#public-recovery,
 #humanitarian,
 #request-flow,
 #scenarios,
@@ -709,6 +710,13 @@ nav.site-nav {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
+
+/* Public / Bank Loan Recovery */
+/* Reuses the shared .split / .split-panel / .sp-* classes so this section is a
+   visual peer of the financial and humanitarian splits. It uses a plain .split
+   (text left, panel right) to sit opposite the flipped financial split above,
+   keeping the page's alternating left/right rhythm. */
+#public-recovery .sp-header-title { color: rgba(255, 255, 255, 0.7); }
 
 /* Humanitarian Split */
 /* Reuses the shared .split / .split-panel / .sp-* classes so this section is a

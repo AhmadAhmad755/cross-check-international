@@ -8,6 +8,7 @@ import ThreePillars from './components/landing/ThreePillars';
 import IntelligenceCategories from './components/landing/IntelligenceCategories';
 import IntelligenceLayerSplit from './components/landing/IntelligenceLayerSplit';
 import FinancialIntelligenceSplit from './components/landing/FinancialIntelligenceSplit';
+import PublicLoanRecovery from './components/landing/PublicLoanRecovery';
 import HumanitarianSplit from './components/landing/HumanitarianSplit';
 import RequestFlow from './components/landing/RequestFlow';
 import Scenarios from './components/landing/Scenarios';
@@ -34,6 +35,7 @@ export default function App() {
         <IntelligenceCategories />
         <IntelligenceLayerSplit />
         <FinancialIntelligenceSplit />
+        <PublicLoanRecovery />
         <HumanitarianSplit />
         <RequestFlow />
         <Scenarios />
